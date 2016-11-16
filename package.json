@@ -1,0 +1,29 @@
+{
+  "name": "fun-and-profit",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard examples/**/*.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colestrode/fun-and-profit.git"
+  },
+  "author": "Cole Furfaro-Strode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colestrode/fun-and-profit/issues"
+  },
+  "homepage": "https://github.com/colestrode/fun-and-profit#readme",
+  "dependencies": {
+    "@slack/client": "^3.6.1",
+    "lodash": "^4.17.1",
+    "nodemon": "^1.11.0",
+    "request": "^2.78.0",
+    "ws": "^1.1.1"
+  },
+  "devDependencies": {
+    "standard": "^8.5.0"
+  }
+}
