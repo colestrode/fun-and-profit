@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "bot": "./bin/run-example.sh",
     "test": "standard examples/**/*.js --fix"
   },
   "repository": {
@@ -18,6 +19,8 @@
   "homepage": "https://github.com/colestrode/fun-and-profit#readme",
   "dependencies": {
     "@slack/client": "^3.6.1",
+    "botkit": "^0.4.1",
+    "express": "^4.14.0",
     "lodash": "^4.17.1",
     "nodemon": "^1.11.0",
     "request": "^2.78.0",

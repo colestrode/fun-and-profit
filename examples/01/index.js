@@ -3,7 +3,6 @@
 const request = require('request')
 const Ws = require('ws')
 let lastMessageId = 0
-let rtm
 
 // use Slack web API to get an RTM API URL
 request({
@@ -25,7 +24,7 @@ function rtmStart (err, res, body) {
   }
 
   // use the url to open a new websocket
-  rtm = new Ws(body.url, null, {agent: null})
+  const rtm = new Ws(body.url, null, {agent: null})
 
   // hey look! it worked!
   rtm.on('open', () => {
@@ -44,22 +43,22 @@ function rtmStart (err, res, body) {
     const message = JSON.parse(event)
     // slack has many message types: https://api.slack.com/rtm
     if (message.type === 'message') {
-      messageHandler(message)
+      messageHandler(rtm, message)
     }
   })
 }
 
 // this callback decides how we respond to a "message" event
-function messageHandler (message) {
+function messageHandler (rtm, message) {
   if (/hello/.test(message.text)) {
-    reply(message, 'GO CUBSSSSS')
+    reply(rtm, message, 'GO CUBS')
   } else if (/howdy/.test(message.text)) {
-    reply(message, 'GO TRIBE')
+    reply(rtm, message, 'GO TRIBE')
   }
 }
 
 // reply using the websocket connection
-function reply (message, text) {
+function reply (rtm, message, text) {
   const replyMessage = {
     id: ++lastMessageId, // need a unique (for this connection), non-negative ID for this message
     type: 'message',
