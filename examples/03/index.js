@@ -6,7 +6,7 @@ controller.spawn({
   token: process.env.SLACK_TOKEN
 }).startRTM((err, connectedBot) => {
   if (err) {
-    return console.log('Error starting RTM', err);
+    return console.log('Error starting RTM', err)
   }
 
   console.log(`connected to ${connectedBot.team_info.name} (${connectedBot.team_info.id}) as ${connectedBot.identity.name} (${connectedBot.identity.id})`)
@@ -17,9 +17,9 @@ controller.spawn({
 // the second arg specifies how the message should be addressed to the bot: ambient, direct_mention, mention, direct_message
 // the third arg is the
 controller.hears('hello', ['ambient'], (bot, message) => {
-  bot.reply(message, 'GO CUBS');
+  bot.reply(message, 'GO CUBS')
 })
 
 controller.hears('howdy', ['ambient'], (bot, message) => {
-  bot.reply(message, 'GO TRIBE');
+  bot.reply(message, 'GO TRIBE')
 })

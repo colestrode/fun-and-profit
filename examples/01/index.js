@@ -16,7 +16,6 @@ request({
   }
 }, rtmStart)
 
-
 function rtmStart (err, res, body) {
   // handle some errors
   if (err || res.statusCode >= 400 || !body.ok) {
@@ -36,7 +35,6 @@ function rtmStart (err, res, body) {
     console.log('oh man, an error happened!', err)
     process.exit(1)
   })
-
 
   // this is where the magic will happen
   rtm.on('message', (event) => {
