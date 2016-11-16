@@ -16,5 +16,3 @@ app.post('/slash', formParser, controller.slash)
 app.listen(9000, () => {
   console.log('server listening on 9000')
 })
-
-

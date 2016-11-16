@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-nodemon examples/$1
+nodemon --watch examples/ examples/$1

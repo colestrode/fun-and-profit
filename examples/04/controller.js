@@ -2,12 +2,12 @@ const api = require('./api')
 const controller = module.exports
 
 // handles oauth callbacks
-controller.oauth = function(req, res) {
+controller.oauth = function (req, res) {
   res.redirect('https://github.com/colestrode/skellington')
 
   api.oauth.access(req.query.code, (err, token) => {
     if (err) {
-      return console.log(err);
+      return console.log(err)
     }
 
     startRtm(token)
@@ -15,7 +15,7 @@ controller.oauth = function(req, res) {
 }
 
 // handles slash command
-controller.slash = function(req, res) {
+controller.slash = function (req, res) {
   const response = {
     text: /hello/.test(req.body.text) ? 'GO CUBS' : 'GO TRIBE',
     response_type: 'ephemeral'

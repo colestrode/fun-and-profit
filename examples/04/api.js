@@ -3,7 +3,7 @@ const api = module.exports
 const botFactory = require('./botFactory')
 
 api.oauth = {}
-api.oauth.access = function(code, cb) {
+api.oauth.access = function (code, cb) {
   const data = {
     // you can get these values by registering a new app at https://api.slack.com/apps
     client_id: process.env.CLIENT_ID,
@@ -19,7 +19,6 @@ api.oauth.access = function(code, cb) {
     cb(null, body.bot.bot_access_token)
   })
 }
-
 
 api.rtm = {}
 api.rtm.start = function (token, cb) {
@@ -43,7 +42,7 @@ function apiRequest (token, method, data, cb) {
     data = {}
   }
 
-  if (token)  {
+  if (token) {
     data.token = token
   }
 
@@ -52,7 +51,7 @@ function apiRequest (token, method, data, cb) {
     uri: `https://slack.com/api/${method}`,
     json: true,
     qs: data
-  }, function(err, res, body) {
+  }, function (err, res, body) {
     if (err || res.statusCode >= 400 || !body.ok) {
       return cb(err || body)
     }
