@@ -5,37 +5,37 @@ going on, just the basics to get you off the ground.
 
 ## Examples
 
-All examples are found under the `examples/` directory.
+All examples are found under the [examples](examples/) directory.
 
-### 01
+### [01](examples/01)
 
 A bare-bones, single-team Slack bot built using `request` and `ws`. Not a lot of error handling or fancy things, but it does the job.
 
-### 02
+### [02](examples/02)
 
 A refactored version of the first Example to help us focus on building "interaction first."
 
-### 03
+### [03](examples/03)
 
 A bot built using `botkit`. More robust error handling, but no reconnection logic if the RTM connection goes down.
 
-### 04
+### [04](examples/04)
 
 A single-team Slack bot written with Skellington. Will attempt to reconnect to the RTM API if disconnected, much more
 robust error handling. Much less code.
 
-### 05
+### [05](examples/05)
 
 A bare-bones Slack app build using `express`, `request`, and `ws`. Adds a bot to your team listening and responding
 via the RTM API and a slash command that will reply privately. If the app restarts, the OAuth token will be lost and 
 you will need to re-add the app to your team.
 
-### 06
+### [06](examples/06)
 
-The same Slack app as 04, but built using Botkit's convenience methods. Again, not much error handling or reconnection
+The same Slack app as example 05, but built using Botkit's convenience methods. Again, not much error handling or reconnection
 logic. If the app restarts, the OAuth token will be lost and you will need to re-add the app to your team.
 
-### 07
+### [07](examples/07)
 
 A Slack app written with Skellington. Will attempt to reconnect to the RTM API if disconnected in addition to other error
 handling. Will keep track of OAuth tokens and will reconnect your bot to each team if your process stops.
