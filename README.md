@@ -17,11 +17,11 @@ A refactored version of the first Example to help us focus on building "interact
 
 ### [03](examples/03)
 
-A bot built using `botkit`. More robust error handling, but no reconnection logic if the RTM connection goes down.
+A bot built using [Botkit](https://github.com/howdyai/botkit). More robust error handling, but no reconnection logic if the RTM connection goes down.
 
 ### [04](examples/04)
 
-A single-team Slack bot written with Skellington. Will attempt to reconnect to the RTM API if disconnected, much more
+A single-team Slack bot written with [Skellington](https://github.com/colestrode/skellington). Will attempt to reconnect to the RTM API if disconnected, much more
 robust error handling. Much less code.
 
 ### [05](examples/05)
